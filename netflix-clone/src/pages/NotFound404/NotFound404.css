@@ -1,0 +1,110 @@
+.notfound {
+  position: relative;
+  min-height: 100vh;
+  background: #000; 
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.error-code {
+  font-size: 10rem;
+  font-weight: 900;
+  color: #e50914; 
+  text-shadow: 0 0 10px #e50914, 0 0 20px #ff1a1a;
+  animation: float 3s ease-in-out infinite;
+}
+
+.error-message {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.error-desc {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+}
+
+.btn-red {
+  background: linear-gradient(45deg, #e50914, #ff1a1a);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-red:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.6);
+}
+
+.background-shapes span.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(120px);
+  animation: moveShape 8s infinite alternate ease-in-out;
+}
+
+.shape1 {
+  width: 350px;
+  height: 350px;
+  background: #e50914;
+  top: -120px;
+  left: -120px;
+}
+
+.shape2 {
+  width: 250px;
+  height: 250px;
+  background: #ff1a1a;
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 2s;
+}
+
+.shape3 {
+  width: 150px;
+  height: 150px;
+  background: #ff3d3d;
+  top: 25%;
+  right: 35%;
+  animation-delay: 4s;
+}
+
+@keyframes moveShape {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(25px, 35px) rotate(45deg); }
+  100% { transform: translate(-25px,-25px) rotate(90deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); } /* subtle float */
+}
+
+@media (max-width: 576px) {
+  .error-code { font-size: 6rem; }
+  .error-message { font-size: 1.5rem; }
+  .error-desc { font-size: 1rem; max-width: 90%; }
+  .btn-red { padding: 0.5rem 1.5rem; font-size: 0.9rem; }
+}
